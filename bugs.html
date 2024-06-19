@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<!--
+	김혜승의 시각화방법론 프로젝트
+-->
+<html lang="en">
+	<head>
+		<!-- Title -->
+		<title>2MORROW WITH 백곰탕</title>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="description" content="HyeseungKim Visualization, Ewha 2024">
+		<meta name="author" content="ewha2024 uxdesign hyeseungkim">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Favicon (http://www.favicon-generator.org/) -->
+		<link rel="shortcut icon" href="faviconfi.png" type="image/x-icon">
+		<link rel="icon" href="faviconfi.png" type="image/x-icon">
+
+		<!-- Your Google Analytics code goes here -->
+
+		<!-- Google fonts (https://www.google.com/fonts) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> <!-- Body font -->
+		<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- Secondary/Alter font -->
+
+		<!-- Libs and Plugins CSS -->
+		<link rel="stylesheet" href="assets/vendor/normalize/normalize.min.css"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
+		<link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
+		<link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css"> <!-- Swiper CSS (https://swiperjs.com/) -->
+		<link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+
+		<!-- Template master CSS -->
+		<link rel="stylesheet" href="assets/css/helper.css">
+		<link id="tt-themecss" rel="stylesheet" href="assets/css/theme.css">
+		<link id="tt-themecss" rel="stylesheet" href="assets/css/custom.css">
+
+		<script>
+
+		</script>
+	</head>
+
+	
+	<!-- ===========
+	///// Body /////
+	================
+	-->
+	<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+
+
+		<!-- *************************************
+		*********** Begin body inner ************* 
+		************************************** -->
+		<main id="body-inner">
+
+			<!-- Begin page transition (do not remove!!!) 
+			=========================== -->
+			<div id="page-transition">
+				<div class="ptr-overlay"></div>
+				<div class="ptr-preloader">
+					<div class="ptr-prel-content">
+						<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
+						<img src="assets/img/preloader.png" class="ptr-prel-image tt-logo-light" alt="Logo">
+					</div> <!-- /.ptr-prel-content -->
+				</div> <!-- /.ptr-preloader -->
+			</div>
+			<!-- End page transition -->
+
+			<!-- Begin magic cursor 
+			======================== -->
+			<div id="magic-cursor">
+				<div id="ball"></div>
+			</div>
+			<!-- End magic cursor --> 
+
+
+			<!-- *****************************************
+			*********** Begin scroll container *********** 
+			****************************************** -->
+			<div id="scroll-container"> 
+				
+				<!-- ===================
+				///// Begin header /////
+				========================
+				* Use class "tt-header-fixed" to set header to fixed position.
+				-->
+				<header id="tt-header" class="tt-header-fixed">
+					<div class="tt-header-inner"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
+						<div class="tt-header-col">
+							<!-- Begin logo 
+							================ -->
+							<div class="tt-logo"> 
+								<a href="landing-page.html">
+									<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
+									<img src="assets/img/logo_1.png" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+									<img src="assets/img/logo_2.png" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+								</a>
+							</div>
+							<!-- End logo -->
+						</div> <!-- /.tt-header-col -->
+
+						<div class="tt-header-col">
+							<!-- Begin overlay menu toggle button -->
+							<div id="tt-ol-menu-toggle-btn-wrap">
+								<div class="tt-ol-menu-toggle-btn-text-wrap hide-cursor">
+									<div class="tt-ol-menu-toggle-btn-text">
+										<span class="text-menu" data-hover="Open">Menu</span>
+										<span class="text-close">Close</span>
+									</div> <!-- /.tt-ol-menu-toggle-btn-text -->
+								</div> <!-- /.tt-ol-menu-toggle-btn-text-wrap -->
+								<div class="tt-ol-menu-toggle-btn-holder">
+									<a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+								</div> <!-- /.tt-ol-menu-toggle-btn-holder -->
+							</div>
+							<!-- End overlay menu toggle button -->
+
+							<!-- Begin overlay menu 
+							======================== 
+							* Use class "tt-ol-menu-count" to enable menu counter.
+							-->
+							<nav class="tt-overlay-menu tt-ol-menu-count">
+								<div class="tt-ol-menu-ghost">2MORROW 백곰탕</div>
+								<div class="tt-ol-menu-holder">
+									<div class="tt-ol-menu-inner tt-wrap">
+										<div class="tt-ol-menu-content">
+
+											<!-- Begin menu list -->
+											<ul class="tt-ol-menu-list">
+
+												<li class="active"><a href="landing-page.html">HOME</a></li>
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">기후재난시나리오</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+															<li><a href="bugs.html">곤충재난</a></li>
+															<li><a href="bugs.html">식량난</a></li>
+															<li><a href="bugs.html">홍수</a></li>
+															<li><a href="bugs.html">폭염</a></li>
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+												<li class="tt-ol-submenu-wrap"><a href="survival_item.html">생존가방</a></li>
+												<li class="tt-ol-submenu-wrap"><a href="memories.html">소중한기억들</a></li>
+												<!-- End submenu (sub-master) -->
+											</ul>
+											<!-- End menu list -->
+
+											<!-- Begin overlay menu social links 
+											===================================== -->
+											<ul class="tt-ol-menu-social">
+												<li><h6 class="tt-ol-menu-social-heading">Social Links:</h6></li>
+												<li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+												<li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a></li>
+												<li><a href="https://www.youtube.com/" target="_blank" rel="noopener">Youtube</a></li>
+											</ul>
+											<!-- End overlay menu social links -->
+
+										</div> <!-- /.tt-ol-menu-content -->
+									</div> <!-- /.tt-ol-menu-inner -->
+								</div> <!-- /.tt-ol-menu-holder -->
+							</nav> 
+							<!-- End overlay menu -->
+						</div> <!-- /.header-col -->
+					</div> <!-- /.header-inner -->
+				</header>
+				<!-- End header -->
+
+				
+				<!-- *************************************
+				*********** Begin content wrap *********** 
+				************************************** -->
+				<div id="content-wrap">
+
+					
+					<!-- ========================
+					///// Begin page header /////
+					============================= 
+					* Use class "ph-full" to enable fullscreen size (no effect on smaller screens!).
+					* Use class "ph-cap-sm", "ph-cap-lg", "ph-cap-xlg" or "ph-cap-xxlg" to set caption size (no class = default size).
+					* Use class "ph-center" to enable content center position.
+					* Use class "ph-image-cropped" to crop image (if image is used). It uses fixed image dimensions (no effect with class "ph-bg-image"!).
+					* Use class "ph-bg-image" to enable page header background image. Note: "ph-caption-title-ghost" will be disabled if you enable this option!
+					* Use class "ph-bg-image-is-light" if needed, it makes the elements dark and more visible if you use a very light background image (effect only with class "ph-bg-image").
+					* Use class "ph-image-cover-*" to set image overlay opacity. For example "ph-image-cover-2" or "ph-image-cover-2-5" (up to "ph-image-cover-9-5").
+					* Use class "ph-content-parallax" to enable content parallax.
+					* Use class "ph-stroke" to enable caption title stroke style.
+					* Use class "ph-ghost-scroll" to enable the scroll effect to caption title ghost (no effect with class "ph-center"!).
+					-->
+					<div id="page-header" class="ph-full ph-cap-lg ph-ghost-scroll ph-image-cropped ph-image-cover-2 ph-content-parallax">
+						<div class="page-header-inner tt-wrap">
+
+							<!-- Begin page header image 
+							============================= -->
+							<div class="ph-image">
+								<div class="ph-image-inner">
+									<img src="assets/img/main/bugs.jpg" alt="Image">
+								</div>
+							</div>
+							<!-- End page header image -->
+
+							<!-- Begin page header caption
+							=============================== 
+							Use class "max-width-*" to set caption max width if needed. For example "max-width-1000". More info about helper classes can be found in the file "helper.css".
+							-->
+							<div class="ph-caption max-width-1000">
+								<div class="ph-caption-subtitle">
+									<div class="ph-appear">기후재난시나리오</div>
+								</div>
+								<h1 class="ph-caption-title">
+									<div class="ph-appear">Bugs</div> <!-- You can use <br> to break a text line if needed -->
+								</h1>
+								<div class="ph-caption-title-ghost">
+									<div class="ph-appear">Bugs</div>
+								</div>
+							</div>
+							<!-- End page header caption -->
+
+						</div> <!-- /.page-header-inner -->
+
+						<!-- Begin scroll down (you can change "data-offset" to set scroll top offset) 
+						======================= -->
+						<div class="tt-scroll-down">
+							<a href="#page-content" class="tt-sd-inner ph-appear" data-offset="0">
+								<div class="tt-sd-arrow">
+									<div class="tt-sd-arrow-inner"></div>
+								</div>
+								<div class="tt-sd-text">Scroll</div>
+							</a>
+						</div>
+						<!-- End scroll down -->
+
+					</div>
+					<!-- End page header -->
+
+
+					<!-- *************************************
+					*********** Begin page content *********** 
+					************************************** -->
+					<div id="page-content">
+
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section">
+							<div class="tt-section-inner tt-wrap">
+
+								<div class="tt-row">
+									<div class="tt-col-lg-9">
+
+										<div class="text-xlg anim-fadeinup">
+
+											<!-- Begin tt-Heading 
+											====================== 
+											* Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
+											* Use class "tt-heading-stroke" to enable stroke style.
+											* Use class "tt-heading-center" to align tt-Heading to center.
+											* Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
+											-->
+											<div class="tt-heading tt-heading-lg margin-bottom-60">
+												<!-- <h3 class="tt-heading-subtitle">Subtitle</h3> -->
+												<h2 class="tt-heading-title">안녕 여러분!</h2> <!-- You can use <br> to break a text line if needed -->
+											</div>
+											<!-- End tt-Heading -->
+
+											<p>우리가 자주 가는 곳들에 벌레가 평소보다 많아졌어.<br>이는 <a href="https://www.sedaily.com/NewsView/2D57SPRAW4" target="_blank" rel="noopener">지구 온난화</a>로 인한 기후변화 때문이야.</p>
+											<p>특히 익충보다 해충들이 많아졌다는 것을 <a href="https://biz.chosun.com/science-chosun/nature-environment/2024/05/31/TFDWPD74SBEE7LNEIJCEISEVWQ/">기사</a>를 통해서도 알 수 있어.</p>
+											<p>기후변화에 대응하지 않으면 어떻게 될까?<br>백곰탕이 미래를 경험한 시나리오로 순서대로 알려줄게.</p>
+										</div>
+
+									</div> <!-- /.tt-col -->
+
+									<div class="tt-col-lg-3">
+									</div> <!-- /.tt-col -->
+								</div> <!-- /.tt-row -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section">
+							<div class="tt-section-inner tt-wrap">
+								
+								<!-- Begin blog list
+								===================== 
+								* Use class "bli-image-cropped" to grop blog list item images (set fixed height).
+								* Use class "bli-compact" to enable compact blog list style. Note: If "tt-sidebar" is used, then add more width to "tt-section-inner", for example "max-width-1600".
+								-->
+								<div id="blog-list" class="bli-compact bli-image-cropped">
+
+									<!-- Begin blog list item 
+									========================== -->
+									<article class="blog-list-item">
+								
+										<!-- Begin blog list item image -->
+										<a href="#" class="bli-image-wrap" data-cursor="곤충난<br>시나리오">
+											<figure class="bli-image bli-image1">
+												<img src="assets/img/main/scenario1.png" data-src="assets/img/main/scenaro1.png" class="tt-lazy anim-zoomin" alt="Image">
+											</figure>
+										</a>
+										<!-- End blog list item image -->
+										
+										<!-- Begin blog list item info -->
+										<div class="bli-info">
+											<h2 class="bli-title"><a href="#">벌레가 요즘 왜 이렇게 많아졌어?</a></h2>
+											<div class="bli-desc"> <!-- 3 lines is optimal! -->
+												기후 변화로 인해 서울 강동구에 곤충의 개체 수가 급증했다. <br> 백곰탕과 그의 친구들은 앞으로 나아갈 수 조차 없었다.
+											</div>
+										</div>
+										<!-- End blog list item info -->
+
+									</article>
+									<!-- End blog list item -->
+
+
+									<!-- Begin blog list item 
+									========================== -->
+									<article class="blog-list-item">
+								
+										<!-- Begin blog list item image -->
+										<a href="#" class="bli-image-wrap" data-cursor="곤충난<br>시나리오">
+											<figure class="bli-image bli-image1">
+												<img src="assets/img/main/scenario2.png" data-src=assets/img/main/scenario2.png" class="tt-lazy anim-zoomin" alt="Image">
+											</figure>
+										</a>
+										<!-- End blog list item image -->
+										
+										<!-- Begin blog list item info -->
+										<div class="bli-info">
+											<h2 class="bli-title"><a href="#">긴팔, 긴바지를 입어야해. 아니면 물려 죽어!!</a></h2>
+											<div class="bli-desc"> <!-- 3 lines is optimal! -->
+												기후변화로 인하여 곤충이 많아지면서. . 라임병, 말라리아가 개체수가 증가했다. <br> 진드기도 증가해서 나 뿐만아니라 반려동물들이 위험하다.
+											</div>
+										</div>
+										<!-- End blog list item info -->
+
+									</article>
+									<!-- End blog list item -->
+
+
+									<!-- Begin blog list item 
+									========================== -->
+									<article class="blog-list-item">
+								
+										<!-- Begin blog list item image -->
+										<a href="#" class="bli-image-wrap" data-cursor="곤충난<br>시나리오">
+											<figure class="bli-image bli-image1">
+												<img src="assets/img/main/scenario3.png" data-src="assets/img/main/scenario3.png" class="tt-lazy anim-zoomin" alt="Image">
+											</figure>
+										</a>
+										<!-- End blog list item image -->
+										
+										<!-- Begin blog list item info -->
+										<div class="bli-info">
+											<h2 class="bli-title"><a href="#">왜 이렇게 까지 많아졌을까?</a></h2>
+											<div class="bli-desc"> <!-- 3 lines is optimal! -->
+												지구온난화로 인하여 벌레 개체수가 증가했다. <br> 지금부터 탄소 절감을 실천해야한다.<br> 환경을 생각하고 평소에 분리수거 잘하기!
+											</div>
+										</div>
+										<!-- End blog list item info -->
+
+									</article>
+									<!-- End blog list item -->
+
+
+									<!-- Begin blog list item 
+									========================== -->
+									<article class="blog-list-item">
+								
+										<!-- Begin blog list item image -->
+										<a href="#" class="bli-image-wrap" data-cursor="곤충난<br>시나리오">
+											<figure class="bli-image bli-image1">
+												<img src="assets/img/main/scenario4.png" data-src="assets/img/main/scenario4.png" class="tt-lazy anim-zoomin" alt="Image">
+											</figure>
+										</a>
+										<!-- End blog list item image -->
+										
+										<!-- Begin blog list item info -->
+										<div class="bli-info">
+											<h2 class="bli-title"><a href="#">벌레가 너무 많아서 더이상은 살 수가 없어져버렸어. <br>벌레가 없는 곳으로 이동하자.</a></h2>
+											<div class="bli-desc"> <!-- 3 lines is optimal! -->
+												짧은 옷은 벌레에 물릴 수 있어 긴 옷을 입어야 한다. <br> 백곰탕의 생존 스프레이를 준비하자.
+											</div>
+											<a href="#" class="bli-read-more tt-btn tt-btn-primary">
+												<div data-hover="스프레이 준비">생존가방 이동</div>
+												<span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
+											</a>
+										</div>
+										<!-- End blog list item info -->
+
+									</article>
+									<!-- End blog list item -->
+								</div>
+								<!-- End blog list -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+
+					   <!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-100 bg-white-accent-3">
+							<div class="tt-section-inner tt-wrap">
+
+								<div class="tt-row">
+									<div class="tt-col-lg-5">
+										<div class="tt-heading tt-heading-lg margin-bottom-60 anim-fadeinup">
+											<h3 class="tt-heading-subtitle">실제 곤충난 사례</h3>
+											<h2 class="tt-heading-title">많은<br> 사람들의<br> 경험담</h2> <!-- You can use <br> to break a text line if needed -->
+										</div>
+										<!-- End tt-Heading -->
+									</div> <!-- /.tt-col -->
+
+									<div class="tt-col-lg-7 tt-align-self-center">
+										<div class="tt-testimonials-slider cursor-drag ts-scale-down ts-hide-navigation anim-fadeinup" data-loop="true" data-simulate-touch="true" data-speed="900">
+											<!-- Begin swiper container -->
+											<div class="swiper">
+												<!-- Begin swiper wrapper (required) -->
+												<div class="swiper-wrapper">
+													<!-- Begin swiper slide 
+													======================== -->
+													<div class="swiper-slide">
+														<!-- Begin testimonials slider item 
+														==================================== -->
+														<div class="tt-testimonials-slider-item">
+															<div class="tt-ts-item-inner">
+																<div class="tt-ts-text">
+																	"화장실에 소변보러 갔는데 그 사이에 모기에 물렸어. 모기가 너무 많아."
+																</div> <!-- /.tt-ts-text -->
+																<div class="tt-ts-subtext">- 점대덕</div>
+															</div> <!-- /.tt-ts-item-inner -->
+														</div> 
+														<!-- End testimonials slider item -->
+													</div> 
+													<!-- End swiper slide -->
+
+													<!-- Begin swiper slide 
+													======================== -->
+													<div class="swiper-slide">
+														<!-- Begin testimonials slider item 
+														==================================== -->
+														<div class="tt-testimonials-slider-item">
+															<div class="tt-ts-item-inner">
+																<div class="tt-ts-text">
+																	"러브버그들이 계단에 죽어있고 그래요. 작년엔 현관 앞에 수북이 쌓여있었어요."
+																</div> <!-- /.tt-ts-text -->
+																<div class="tt-ts-subtext">- 이수자</div>
+															</div> <!-- /.tt-ts-item-inner -->
+														</div>
+														<!-- End testimonials slider item -->
+													</div>
+													<!-- End swiper slide -->
+
+													<!-- Begin swiper slide 
+													======================== -->
+													<div class="swiper-slide">
+														<!-- Begin testimonials slider item 
+														==================================== -->
+														<div class="tt-testimonials-slider-item">
+															<div class="tt-ts-item-inner">
+																<div class="tt-ts-text">
+																	"하천이나 산자락 같은 고인물에 이제 모기 유충이 많이 있어요. 1.5배에서 2배는 발생하고 있는 것 같습니다."
+																</div> <!-- /.tt-ts-text -->
+																<div class="tt-ts-subtext">- 민경주</div>
+															</div> <!-- /.tt-ts-item-inner -->
+														</div>
+														<!-- End testimonials slider item -->
+													</div>
+													<!-- End swiper slide -->
+												</div>
+												<!-- End swiper wrapper -->
+											</div>
+											<!-- End swiper container -->
+
+											<!-- Begin testimonials slider navigation (arrows) 
+											=================================================== -->
+											<div class="tt-ts-nav-prev">
+												<div class="tt-ts-nav-arrow magnetic-item"><i class="tt-arrow-left"></i></div>
+											</div>
+											<div class="tt-ts-nav-next">
+												<div class="tt-ts-nav-arrow magnetic-item"><i class="tt-arrow-right"></i></div>
+											</div>
+											<!-- End testimonials slider navigation -->
+											<!-- Testimonials slider pagination -->
+											<div class="tt-ts-pagination hide-cursor"></div>
+										</div>
+										<!-- End testimonials slider -->
+									</div> <!-- /.tt-col -->
+								</div> <!-- /.tt-row -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+						
+						
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section">
+							<div class="tt-section-inner">
+
+								<!-- =============================
+								///// Begin content carousel /////
+								==================================
+								* Use class "cc-shifted" to enable shifted style (no effect on small screens!).
+								* Use class "cursor-drag" to enable cursor drag on carousel hover ("data-simulate-touch" attribute must be enabled!).
+								* Use class "cc-scale-down" to enable scale down animation on carousel click.
+								* Use class "cc-pagination-outside" to bring pagination outside.
+								* Use class "cc-hide-pagination" to hide pagination (for desktop only!).
+								* Use class "cc-hide-navigation" to hide navigation arrows.
+								* Available data attributes:
+										data-speed="900"......................(milliseconds)
+										data-autoplay="5000"..................(milliseconds. Note: disabled after user first interactions)
+										data-simulate-touch="true"............(true/false)
+										data-loop="true"......................(true/false)
+										data-pagination-type="bullets"........(bullets/fraction/progressbar)
+								-->
+								<div class="tt-content-carousel cursor-drag cc-scale-down cc-hide-pagination cc-pagination-outside cc-hide-navigation" data-loop="true" data-simulate-touch="true" data-speed="900">
+
+									<!-- Begin swiper container -->
+									<div class="swiper">
+
+										<!-- Begin swiper wrapper (required) -->
+										<div class="swiper-wrapper">
+
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<div class="tt-content-carousel-item">
+													<figure>
+														<img class="tt-cc-image swiper-lazy" src="assets/img/main/bug1.png" data-src="assets/img/main/bug1.png" alt="Image">
+														<!-- <figcaption>Image Caption</figcaption> -->
+													</figure>
+												</div> <!-- /.tt-content-carousel-item -->
+											</div>
+											<!-- End swiper slide -->
+
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<div class="tt-content-carousel-item">
+													<figure>
+														<img class="tt-cc-image swiper-lazy" src="assets/img/main/bug2.png" data-src="assets/img/main/bug2.png" alt="Image">
+														<!-- <figcaption>Image Caption</figcaption> -->
+													</figure>
+												</div> <!-- /.tt-content-carousel-item -->
+											</div>
+											<!-- End swiper slide -->
+
+											<!-- Begin swiper slide  https://youtu.be/lUEQbzT2xa4?si=7kXj8RVQ9Wnv5guk
+											======================== -->
+											<div class="swiper-slide">
+												<div class="tt-content-carousel-item">
+													<figure>
+														<video class="tt-cc-video" loop muted preload="metadata" poster="assets/img/main/bug4.png">
+															<source src="assets/vids/videoplayback.mp4" type="video/mp4">
+														</video>
+													</figure>
+												</div> <!-- /.tt-content-carousel-item -->
+											</div> 
+											<!-- End swiper slide -->
+
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<div class="tt-content-carousel-item">
+													<figure>
+														<img class="tt-cc-image swiper-lazy" src="assets/img/main/bug31.png" data-src="assets/img/main/bug31.png" alt="Image">
+														<!-- <figcaption>Image Caption</figcaption> -->
+													</figure>
+												</div> <!-- /.tt-content-carousel-item -->
+											</div>
+											<!-- End swiper slide -->
+
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<div class="tt-content-carousel-item">
+													<figure>
+														<img class="tt-cc-image swiper-lazy" src="assets/img/main/bug3.png" data-src="assets/img/main/bug3.png" alt="Image">
+														<!-- <figcaption>Image Caption</figcaption> -->
+													</figure>
+												</div> <!-- /.tt-content-carousel-item -->
+											</div>
+											<!-- End swiper slide -->
+
+										</div>
+										<!-- End swiper wrapper -->
+
+									</div>
+									<!-- End swiper container -->
+
+
+									<!-- Begin content carousel navigation (arrows) 
+									=================================================== -->
+									<div class="tt-cc-nav-prev">
+										<div class="tt-cc-nav-arrow magnetic-item"><i class="tt-arrow-left"></i></div>
+									</div>
+									<div class="tt-cc-nav-next">
+										<div class="tt-cc-nav-arrow magnetic-item"><i class="tt-arrow-right"></i></div>
+									</div>
+									<!-- End content carousel navigation -->
+
+									<!-- Content carousel pagination -->
+									<div class="tt-cc-pagination hide-cursor"></div>
+
+								</div>
+								<!-- End content carousel -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+							<div class="tt-section-inner tt-wrap">
+
+								<div class="tt-row padding-bottom-2-p">
+									<div class="tt-col-lg-7">
+
+										<!-- Begin tt-Heading 
+										====================== 
+										* Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
+										* Use class "tt-heading-stroke" to enable stroke style.
+										* Use class "tt-heading-center" to align tt-Heading to center.
+										* Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
+										-->
+										<div class="tt-heading tt-heading-xlg anim-fadeinup">
+											<h3 class="tt-heading-subtitle">기후재난 시나리오</h3>
+											<h2 class="tt-heading-title">곤충난에서 살아남기</h2> <!-- You can use <br> to break a text line if needed -->
+										</div>
+										<!-- End tt-Heading -->
+
+									</div> <!-- /.tt-col -->
+
+									<div class="tt-col-lg-5 tt-align-self-center">
+
+										<div class="anim-fadeinup">
+											<h5>기후변화에 대응하지 못해 곤충이 너무 많아졌다.<br>그래도 이겨낼 방법이 있지 않을까?</h5>
+										</div>
+
+										<div class="text-gray anim-fadeinup">
+											<p>백곰탕과 함께 순서대로 준비해보자.</p>
+										</div>
+
+									</div> <!-- /.tt-col -->
+								</div> <!-- /.tt-row -->
+
+								<!-- Begin accordion 
+								===================== 
+								* Use class "tt-ac-sm", "tt-ac-lg", "tt-ac-xlg" or "tt-ac-xxlg" to set accordion size.
+								* Use class "tt-ac-borders" to enable borders.
+								* Note: Add class "is-open" to the "tt-accordion-content" to make this content open by default.
+								-->
+								<div class="tt-accordion tt-ac-borders">
+									<div class="tt-accordion-item anim-fadeinup">
+										<div class="tt-accordion-heading">
+											<div class="tt-ac-head cursor-alter">
+												<h3 class="tt-ac-head-title">예방 및 보호</h3>
+												<!-- <div class="tt-accordion-subtext">Mauris mauris ante</div> -->
+											</div>
+
+											<div class="tt-accordion-caret-wrap">
+												<div class="tt-accordion-caret-inner magnetic-item">
+													<div class="tt-accordion-caret"></div>
+												</div>
+											</div> <!-- /.tt-accordion-caret-wrap -->
+										</div> <!-- /.tt-accordion-heading -->
+										<div class="tt-accordion-content max-width-800">
+											<p> 말라리아 유행 지역에서의 보호<br>
+													적절한 의복 착용: 말라리아가 유행하는 아프리카 지역을 여행하는 경우, 모기가 활발히 활동하는 저녁 시간에 긴 소매 셔츠와 긴 바지를 착용합니다. 이는 모기 물림을 최소화하는 효과가 있습니다.<br>
+													방충제 사용: <a href="survival_item.html">DEET 성분이 포함된 방충제</a>를 피부와 옷에 뿌립니다. 예를 들어, 네팔 트레킹을 하는 동안 방충제를 지속적으로 사용한 결과 모기 물림이 크게 줄어든 사례가 있습니다.<br>
+													방충망 설치: 아프리카의 여러 마을에서는 모기장 설치 캠페인을 통해 말라리아 발병률을 크게 낮췄습니다.</p></div>
+									</div> <!-- /.tt-accordion-item -->
+
+									<div class="tt-accordion-item anim-fadeinup">
+										<div class="tt-accordion-heading">
+											<div class="tt-ac-head cursor-alter">
+												<h3 class="tt-ac-head-title">위생 관리</h3>
+												<!-- <div class="tt-accordion-subtext">Vivamus nisi</div> -->
+											</div>
+
+											<div class="tt-accordion-caret-wrap">
+												<div class="tt-accordion-caret-inner magnetic-item">
+													<div class="tt-accordion-caret"></div>
+												</div>
+											</div> <!-- /.tt-accordion-caret-wrap -->
+										</div> <!-- /.tt-accordion-heading -->
+										<div class="tt-accordion-content max-width-800">
+											<p>쓰레기 관리로 인한 곤충 감소<br>
+												청결 유지: 캠핑장에서 음식물을 조리한 후, 바로 식기를 설거지하고 주위 환경을 청소하여 파리나 개미의 접근을 막습니다. 예를 들어, 미국의 한 캠핑장에서 이러한 위생 관리를 철저히 한 결과, 곤충의 출현이 눈에 띄게 줄어들었습니다.<br>
+												쓰레기 관리: 뉴욕 시에서는 음식물 쓰레기를 밀폐된 용기에 보관하는 것을 의무화하여 쥐와 같은 해충 문제를 해결했습니다.<br>
+												정기적인 소독: 인도에서 모기 번식을 막기 위해 정기적으로 방역 소독을 실시하여 댕기열 발병률을 낮춘 사례가 있습니다.
+											</p>
+										</div> <!-- /.tt-accordion-content -->
+									</div> <!-- /.tt-accordion-item -->
+
+									<div class="tt-accordion-item anim-fadeinup">
+										<div class="tt-accordion-heading">
+											<div class="tt-ac-head cursor-alter">
+												<h3 class="tt-ac-head-title">곤충 서식지 관리</h3>
+												<!-- <div class="tt-accordion-subtext">Nam min proin eget</div> -->
+											</div>
+
+											<div class="tt-accordion-caret-wrap">
+												<div class="tt-accordion-caret-inner magnetic-item">
+													<div class="tt-accordion-caret"></div>
+												</div>
+											</div> <!-- /.tt-accordion-caret-wrap -->
+										</div> <!-- /.tt-accordion-heading -->
+										<div class="tt-accordion-content max-width-800">
+											<p>
+												물 고임 방지로 모기 번식 억제<br>
+												물 고임 방지: 말레이시아의 한 마을에서는 장마철에 집 주변의 물 고인 곳을 정기적으로 제거하여 모기 번식을 효과적으로 억제했습니다.<br>
+												정리정돈: 태국의 농촌 지역에서는 농가 주변의 쓰레기와 잡초를 제거함으로써 곤충 서식지를 줄여 해충 문제를 줄였습니다.<br>
+												환경 개선: 이탈리아의 한 농촌에서는 라벤더, 박하 등 곤충을 쫓아내는 식물을 심어 모기와 파리의 출현을 줄이는 데 성공했습니다.
+											</p>
+										</div> <!-- /.tt-accordion-content -->
+									</div> <!-- /.tt-accordion-item -->
+
+									<div class="tt-accordion-item anim-fadeinup">
+										<div class="tt-accordion-heading">
+											<div class="tt-ac-head cursor-alter">
+												<h3 class="tt-ac-head-title">건강 관리</h3>
+												<!-- <div class="tt-accordion-subtext">Condimentum sit amet</div> -->
+											</div>
+
+											<div class="tt-accordion-caret-wrap">
+												<div class="tt-accordion-caret-inner magnetic-item">
+													<div class="tt-accordion-caret"></div>
+												</div>
+											</div> <!-- /.tt-accordion-caret-wrap -->
+										</div> <!-- /.tt-accordion-heading -->
+										<div class="tt-accordion-content max-width-800">
+											<p>
+												곤충 매개 질병 예방 및 치료<br>
+												의료 키트 준비: 열대 우림 지역을 탐험하는 탐험가들은 항상 항히스타민제, 소독제, 진통제 등이 포함된 의료 키트를 휴대합니다. 예를 들어, 아마존 탐험 도중 벌에 쏘였을 때 이러한 키트가 유용했습니다.<br>
+												질병 예방 접종: 여행 전 일본 뇌염이 유행하는 동남아시아 지역을 방문할 계획이 있는 여행자는 일본 뇌염 예방 접종을 맞습니다.<br>
+												의심 증상 즉시 치료: 서아프리카에서 뎅기열에 걸린 여행자가 초기 증상 발현 후 즉시 의료 기관을 방문하여 치료를 받아 빠르게 회복된 사례가 있습니다.
+											</p>
+										</div> <!-- /.tt-accordion-content -->
+									</div> <!-- /.tt-accordion-item -->
+
+								</div>
+								<!-- End accordion -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+							<div class="tt-section-inner tt-wrap">
+
+								<!-- Begin tt-Heading 
+								====================== 
+								* Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
+								* Use class "tt-heading-stroke" to enable stroke style.
+								* Use class "tt-heading-center" to align tt-Heading to center.
+								* Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
+								-->
+								<div class="tt-heading tt-heading-lg tt-heading-center margin-bottom-120 anim-fadeinup">
+									<!-- <h3 class="tt-heading-subtitle text-main">Subtitle</h3> -->
+									<h2 class="tt-heading-title">살아남기 위해 내가 <br>당장 할 수 있는 일</h2> <!-- You can use <br> to break a text line if needed -->
+								</div>
+								<!-- End tt-Heading -->
+
+								<!-- Begin logo wall 
+								=====================
+								* Use class "cl-col-2", "cl-col-3" or "cl-col-4" to change columns.
+								* Hint: for better results make sure all your images are in the same dimensions!
+								-->
+								
+								<ul class="tt-logo-wall anim-fadeinup cl-col-3">
+									<li class="main-block">
+										<img src="assets/img/main/temperature_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/temperature.png" class="lv-client-dark" alt="Client">
+										<p>실내 온도를 1도 씩만 <br> 높이고 낮추기</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/wall-clock_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/wall-clock.png" class="lv-client-dark" alt="Client">
+										<p>샤워 시간을 1분 <br> 이라도 줄이기</p>
+									</li>
+									<li class="main-block"> 
+										<img src="assets/img/main/charger_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/charger_black.png" class="lv-client-dark" alt="Client">
+										<p>사용하지 않는 <br>콘센트는 빼놓기</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/high_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/high.png" class="lv-client-dark" alt="Client">
+										<p>소비 효율이 높은<br> 에너지 제품 선택</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/planet-earth_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/planet-earth.png" class="lv-client-dark" alt="Client">
+										<p>물건을 사야한다면<br>친환경 제품 사용하기</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/seoul-metro-logo_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/seoul-metro-logo.png" class="lv-client-dark" alt="Client">
+										<p>어딘가를 가야한다면<br>대중교통 이용하기</p>
+									</li>
+								</ul>
+								<!-- End logo wall -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+
+					
+
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+							<div class="tt-section-inner tt-wrap">
+
+								<!-- Begin page nav 
+								==================== 
+								* Use class "tt-pn-center" to align page nav to center.
+								* Use class "tt-pn-stroke" to enable title stroke style.
+								-->
+								<div class="tt-page-nav tt-pn-stroke">
+									<a href="landing-page.html" class="tt-pn-link anim-fadeinup" data-cursor="<i class='fas fa-home'></i>">
+										<div class="tt-pn-title">Just Do It</div>
+										<div class="tt-pn-hover-title">Just Do It</div>
+									</a> <!-- /.tt-pn-link -->
+									<div class="tt-pn-subtitle anim-fadeinup">살아남기 위해 바로 실천하세요.</div>
+								</div>
+								<!-- End page nav -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+
+					</div>
+					<!-- End page content -->
+					
+
+					<!-- ======================
+					///// Begin tt-footer /////
+					=========================== -->
+					<footer id="tt-footer">
+						<div class="tt-footer-inner">
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center-left">
+								<div class="footer-col-inner">
+
+									<a href="#" class="tt-btn tt-btn-link scroll-to-top">
+										<span class="tt-btn-icon"><i class="fas fa-arrow-up"></i></span>
+										<div data-hover="Back to Top">Back to Top</div>
+									</a>
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center order-m-last">
+								<div class="footer-col-inner">
+
+									<div class="tt-copyright text-gray">
+										<a href="#" target="_blank" rel="noopener" class="tt-btn tt-btn-link">
+											<span class="tt-btn-icon"><i class="far fa-copyright"></i></span>
+											<div data-hover="HyeseungKim">Made by Hyeseung Kim</div>
+										</a>
+									</div>
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center-right">
+								<div class="footer-col-inner">
+
+									<div class="footer-social">
+										<div class="footer-social-text"><span>Follow</span><i class="fas fa-share-alt"></i></div>
+										<div class="social-buttons">
+											<ul>
+												<li><a href="https://www.facebook.com/" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href="https://twitter.com/" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+												<li><a href="https://www.youtube.com/" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+											</ul>
+										</div> <!-- /.social-buttons -->
+									</div> <!-- /.footer-social -->
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+						</div> <!-- /.tt-section-inner -->
+					</footer>
+					<!-- End tt-footer -->
+
+
+				</div>
+				<!-- End content wrap -->
+
+			</div>
+			<!-- End scroll container -->
+
+
+		</main>
+		<!-- End body inner -->
+
+
+        
+
+		<!-- ====================
+		///// Scripts below /////
+		===================== -->
+
+		<!-- Core JS -->
+		<script src="assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+
+		<!-- Libs and Plugins JS -->
+		<script src="assets/vendor/gsap/gsap.min.js"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->
+		<script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script> <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
+		<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script> <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
+
+		<script src="assets/vendor/smooth-scrollbar.js"></script> <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
+		<script src="assets/vendor/swiper/js/swiper-bundle.min.js"></script> <!-- Swiper JS (https://swiperjs.com/) -->
+		<script src="assets/vendor/isotope/imagesloaded.pkgd.min.js"></script> <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
+		<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
+		<script src="assets/vendor/isotope/packery-mode.pkgd.min.js"></script> <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
+		<script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
+		<script src="assets/vendor/jquery.mousewheel.min.js"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
+
+		<!-- Template master JS -->
+		<script src="assets/js/theme.js"></script>
+
+
+
+	</body>
+
+</html>

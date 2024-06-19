@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<!--
+	김혜승의 시각화방법론 프로젝트
+-->
+<html lang="en">
+	<head>
+		<!-- Title -->
+		<title>2MORROW WITH 백곰탕</title>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="description" content="HyeseungKim Visualization, Ewha2024 시각화방법론수업">
+		<meta name="author" content="hyeseungkim">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Favicon (http://www.favicon-generator.org/) -->
+		<link rel="shortcut icon" href="faviconfi.png" type="image/x-icon">
+		<link rel="icon" href="faviconfi.png" type="image/x-icon">
+
+		<!-- Your Google Analytics code goes here -->
+
+		<!-- Google fonts (https://www.google.com/fonts) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> <!-- Body font -->
+		<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- Secondary/Alter font -->
+
+		<!-- Libs and Plugins CSS -->
+		<link rel="stylesheet" href="assets/vendor/normalize/normalize.min.css"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
+		<link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
+		<link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css"> <!-- Swiper CSS (https://swiperjs.com/) -->
+		<link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+
+		<!-- Template master CSS -->
+		<link rel="stylesheet" href="assets/css/helper.css">
+		<link id="tt-themecss" rel="stylesheet" href="assets/css/theme.css">
+		<link id="tt-themecss" rel="stylesheet" href="assets/css/custom.css">
+
+		<script>
+			const countDownTimer = function (id, date) {
+				var _vDate = new Date(date);
+				var _second = 1000;
+				var _minute = _second * 60;
+				var _hour = _minute * 60;
+				var _day = _hour * 24;
+				var timer;
+		
+				function showRemaining() {
+					var now = new Date();
+					var distDt = _vDate - now;
+		
+					if (distDt < 0) {
+						clearInterval(timer);
+						document.getElementById(id).textContent = '남은 시간이 종료되었습니다. 다들 무사히 잘지내고 계신가요?';
+						return;
+					}
+		
+					var days = Math.floor(distDt / _day);
+					var hours = Math.floor((distDt % _day) / _hour);
+					var minutes = Math.floor((distDt % _hour) / _minute);
+					var seconds = Math.floor((distDt % _minute) / _second);
+		
+					//document.getElementById(id).textContent = date.toLocaleString() + "까지 : ";
+					document.getElementById(id).textContent = days + '일 ';
+					document.getElementById(id).textContent += hours + '시간 ';
+					document.getElementById(id).textContent += minutes + '분 ';
+					document.getElementById(id).textContent += seconds + '초';
+				}
+		
+				timer = setInterval(showRemaining, 1000);
+			}
+		
+			var dateObj = new Date();
+			dateObj.setDate(dateObj.getDate() + 1);
+		
+			countDownTimer('sample02', '06/19/2026 00:00 AM'); // 2024년 4월 1일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다.
+
+			
+			function updateTimer() {
+					// yyyy-MM-dd HH:mm:ss
+				past  = Date.parse("2024-06-19 00:00:00");
+				now     = new Date();
+				diff    = now - past;
+
+				years1  = Math.floor( diff / (1000*60*60*24*30*12) );
+				months1 = Math.floor( diff / (1000*60*60*24*30) );
+				days1   = Math.floor( diff / (1000*60*60*24) );
+				hours1  = Math.floor( diff / (1000*60*60) );
+				mins   = Math.floor( diff / (1000*60) );
+				secs   = Math.floor( diff / 1000 );
+
+				y = years1;
+				M = months1 - years1  * 12;
+				d = days1   - months1 * 30;
+				h = hours1  - days1   * 24;
+				m = mins   - hours1  * 60;
+				s = secs   - mins   * 60;
+
+
+				document.getElementById("timer")
+					.innerHTML =
+					'<div><span>Since: 2024.06.19</span></div><br>'+
+					'<div class="tt-heading-title">' + y + '<span>년</span>/' +
+					  M + '<span>월</span>/' 
+					 + d + '<span>일</span>/' 
+					 + h + '<span>시</span>/' 
+					 + m + '<span>분</span>/' 
+					 + s + '<span>초</span></div>' ;
+				}
+				setInterval('updateTimer()', 1000 );
+
+		</script>
+	</head>
+
+	
+	<!-- ===========
+	///// Body /////
+	================
+	* Use class "tt-boxed" to enable page boxed layout globally (affects all elements containing class "tt-wrap").
+	* Use class "tt-smooth-scroll" to enable page smooth scrolling.
+	* Use class "tt-transition" to enable page transitions.
+	* Use class "tt-magic-cursor" to enable magic cursor.
+	* Note: there may be classes that are specific to this page only!
+	-->
+	<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+		<!-- *************************************
+		*********** Begin body inner ************* 
+		************************************** -->
+		<main id="body-inner">
+			<!-- Begin page transition (do not remove!!!) 
+			=========================== -->
+			<div id="page-transition">
+				<div class="ptr-overlay"></div>
+				<div class="ptr-preloader">
+					<div class="ptr-prel-content">
+						<!-- Hint: You may need to change the img height and opacity to match your logo type. You can do this from the "theme.css" file (find: ".ptr-prel-image"). -->
+						<img src="assets/img/preloader.png" class="ptr-prel-image tt-logo-light" alt="Logo">
+					</div> <!-- /.ptr-prel-content -->
+				</div> <!-- /.ptr-preloader -->
+			</div>
+			<!-- End page transition -->
+
+			<!-- Begin magic cursor 
+			======================== -->
+			<div id="magic-cursor">
+				<div id="ball"></div>
+			</div>
+			<!-- End magic cursor --> 
+			<!-- *****************************************
+			*********** Begin scroll container *********** 
+			****************************************** -->
+			<div id="scroll-container"> 
+				<!-- ===================
+				///// Begin header /////
+				========================
+				* Use class "tt-header-fixed" to set header to fixed position.
+				-->
+				<header id="tt-header" class="tt-header-fixed">
+					<div class="tt-header-inner"> <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag!). Note: additionally you can use prepared helper class "max-width-*" to add custom width to "tt-wrap". Example: "max-width-1500" (class "tt-wrap" is still required!). More info about helper classes can be found in the file "helper.css". -->
+						<div class="tt-header-col">
+							<!-- Begin logo 
+							================ -->
+							<div class="tt-logo"> 
+								<a href="landing-page.html">
+									<!-- Hint: You may need to change the img height to match your logo type. You can do this from the "theme.css" file (find: ".tt-logo img"). -->
+									<img src="assets/img/logo_1.png" class="tt-logo-light magnetic-item" alt="Logo"> <!-- logo light -->
+									<img src="assets/img/logo_2.png" class="tt-logo-dark magnetic-item" alt="Logo"> <!-- logo dark -->
+								</a>
+							</div>
+							<!-- End logo -->
+						</div> <!-- /.tt-header-col -->
+
+						<div class="tt-header-col">
+
+							<!-- Begin overlay menu toggle button -->
+							<div id="tt-ol-menu-toggle-btn-wrap">
+								<div class="tt-ol-menu-toggle-btn-text-wrap hide-cursor">
+									<div class="tt-ol-menu-toggle-btn-text">
+										<span class="text-menu" data-hover="Open">Menu</span>
+										<span class="text-close">Close</span>
+									</div> <!-- /.tt-ol-menu-toggle-btn-text -->
+								</div> <!-- /.tt-ol-menu-toggle-btn-text-wrap -->
+								<div class="tt-ol-menu-toggle-btn-holder">
+									<a href="#" class="tt-ol-menu-toggle-btn magnetic-item"><span></span></a>
+								</div> <!-- /.tt-ol-menu-toggle-btn-holder -->
+							</div>
+							<!-- End overlay menu toggle button -->
+
+							<!-- Begin overlay menu 
+							======================== 
+							* Use class "tt-ol-menu-count" to enable menu counter.
+							-->
+							<nav class="tt-overlay-menu tt-ol-menu-count">
+								<div class="tt-ol-menu-ghost">2MORROW 백곰탕</div>
+								<div class="tt-ol-menu-holder">
+									<div class="tt-ol-menu-inner tt-wrap">
+										<div class="tt-ol-menu-content">
+
+											<!-- Begin menu list -->
+											<ul class="tt-ol-menu-list">
+
+												<li class="active"><a href="landing-page.html">HOME</a></li>
+
+												<!-- Begin submenu (submenu master)
+												==================================== -->
+												<li class="tt-ol-submenu-wrap">
+													<div class="tt-ol-submenu-trigger">
+														<a href="#">기후재난시나리오</a>
+														<div class="tt-ol-submenu-caret-wrap">
+															<div class="tt-ol-submenu-caret magnetic-item"></div>
+														</div> <!-- /.tt-ol-submenu-caret-wrap -->
+													</div> <!-- /.tt-ol-submenu-trigger -->
+													<div class="tt-ol-submenu">
+														<ul class="tt-ol-submenu-list">
+															<li><a href="bugs.html">곤충재난</a></li>
+															<li><a href="bugs.html">식량난</a></li>
+															<li><a href="bugs.html">홍수</a></li>
+															<li><a href="bugs.html">폭염</a></li>
+														</ul> <!-- /.tt-ol-submenu-list -->
+													</div> <!-- /.tt-ol-submenu -->
+												</li>
+												<!-- End submenu (sub-master) -->
+												<li class="tt-ol-submenu-wrap"><a href="survival_item.html">생존가방</a></li>
+												<li class="tt-ol-submenu-wrap"><a href="memories.html">소중한순간들</a></li>
+												<!-- End submenu (sub-master) -->
+											</ul>
+											<!-- End menu list -->
+
+											<!-- Begin overlay menu social links 
+											===================================== -->
+											<ul class="tt-ol-menu-social">
+												<li><h6 class="tt-ol-menu-social-heading">Social Links:</h6></li>
+												<li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+												<li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a></li>
+												<li><a href="https://www.youtube.com/" target="_blank" rel="noopener">Youtube</a></li>
+											</ul>
+											<!-- End overlay menu social links -->
+
+										</div> <!-- /.tt-ol-menu-content -->
+									</div> <!-- /.tt-ol-menu-inner -->
+								</div> <!-- /.tt-ol-menu-holder -->
+							</nav> 
+							<!-- End overlay menu -->
+						</div> <!-- /.header-col -->
+					</div> <!-- /.header-inner -->
+				</header>
+				<!-- End header -->
+				<!-- *************************************
+				*********** Begin content wrap *********** 
+				************************************** -->
+				<div id="content-wrap">
+					<div id="page-header" class="ph-full ph-cap-lg ph-ghost-scroll ph-image-cropped ph-content-parallax">
+						<div class="page-header-inner tt-wrap">
+							<div class="ph-caption">
+								<!-- <div class="ph-caption-subtitle">
+									<div class="ph-appear">Subtitle</div>
+								</div> -->
+								<h1 class="ph-caption-title">
+									<div class="ph-appear">우리에게 남은시간<br><em class="text-stroke-light"><h1 id="sample02"></h1></em></div> <!-- You can use <br> to break a text line if needed -->
+								</h1>
+								<div class="ph-caption-title-ghost">
+									<div class="ph-appear">TWO YEARS LEFT</div>
+								</div>
+							</div>
+							<!-- End page header caption -->
+
+						</div> <!-- /.page-header-inner -->
+
+						<!-- Begin scroll down (you can change "data-offset" to set scroll top offset) 
+						======================= -->
+						<div class="tt-scroll-down">
+							<a href="#page-content" class="tt-sd-inner ph-appear" data-offset="0">
+								<div class="tt-sd-arrow">
+									<div class="tt-sd-arrow-inner"></div>
+								</div>
+								<div class="tt-sd-text">Scroll</div>
+							</a>
+						</div>
+						<!-- End scroll down -->
+						
+					</div>
+					<!-- End page header -->
+					<!-- *************************************
+					*********** Begin page content *********** 
+					************************************** -->
+					<div id="page-content">
+						<div class="tt-section">
+							<div class="tt-section-inner">
+								<div id="portfolio-grid" class="pgi-hover">
+									<div class="tt-grid ttgr-layout-creative-2 ttgr-gap-4">
+										<div class="tt-grid-items-wrap isotope-items-wrap">
+											<!-- Begin tt-Grid item
+											======================== -->
+											<div class="tt-grid-item isotope-item people">
+												<div class="ttgr-item-inner">
+													<div class="portfolio-grid-item">
+														<a href="memories.html" class="pgi-image-wrap" data-cursor="벚꽃<br>놀이">
+															<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+															<div class="pgi-image-holder">
+																<div class="pgi-image-inner anim-zoomin">
+																	<figure class="pgi-video-wrap ttgr-height">
+																		<video class="pgi-video" loop muted preload="metadata" poster="assets/img/main/spring_beak.png">
+																			<source src="assets/vids/spring_beak.mp4" type="video/mp4">
+																		</video>
+																	</figure> <!-- /.pgi-video-wrap -->
+																</div> <!-- /.pgi-image-inner -->
+															</div> <!-- /.pgi-image-holder -->
+														</a> <!-- /.pgi-image-wrap -->
+
+														<div class="pgi-caption">
+															<div class="pgi-caption-inner">
+																<h2 class="pgi-title">
+																	<a href="memories.html">벚꽃이 흩날리는 봄</a>
+																</h2>
+																<div class="pgi-categories-wrap">
+																	<div class="pgi-category">백곰탕과 함께지낸 봄의 그날</div>
+																	<!-- <div class="pgi-category">Varia</div> -->
+																</div> <!-- /.pli-categories-wrap -->
+															</div> <!-- /.pgi-caption-inner -->
+														</div> <!-- /.pgi-caption -->
+													</div>
+													<!-- End portfolio grid item -->
+
+												</div> <!-- /.ttgr-item-inner -->
+											</div>
+											<!-- End tt-Grid item -->
+
+											<!-- Begin tt-Grid item
+											======================== -->
+											<div class="tt-grid-item isotope-item creative">
+												<div class="ttgr-item-inner">
+
+													<!-- Begin portfolio grid item 
+													===============================
+													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
+													-->
+													<div class="portfolio-grid-item">
+														<a href="memories.html" class="pgi-image-wrap" data-cursor="여름<br>바다">
+															<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+															<div class="pgi-image-holder">
+																<div class="pgi-image-inner anim-zoomin">
+																	<figure class="pgi-video-wrap ttgr-height">
+																		<video class="pgi-video" loop muted preload="metadata" poster="assets/img/main/summer_beak.png">
+																			<source src="assets/vids/summer_beak.mp4" type="video/mp4">
+																		</video>
+																	</figure> <!-- /.pgi-video-wrap -->
+																</div> <!-- /.pgi-image-inner -->
+															</div> <!-- /.pgi-image-holder -->
+														</a> <!-- /.pgi-image-wrap -->
+
+														<div class="pgi-caption">
+															<div class="pgi-caption-inner">
+																<h2 class="pgi-title">
+																	<a href="memories.html">바다마을에서 한달살기</a>
+																</h2>
+																<div class="pgi-categories-wrap">
+																	<div class="pgi-category">백곰탕이 지냈던 여름</div>
+																	<!-- <div class="pgi-category">Varia</div> -->
+																</div> <!-- /.pli-categories-wrap -->
+															</div> <!-- /.pgi-caption-inner -->
+														</div> <!-- /.pgi-caption -->
+													</div>
+													<!-- End portfolio grid item -->
+
+												</div> <!-- /.ttgr-item-inner -->
+											</div>
+											<!-- End tt-Grid item -->
+
+											<!-- Begin tt-Grid item
+											======================== -->
+											<div class="tt-grid-item isotope-item people">
+												<div class="ttgr-item-inner">
+
+													<!-- Begin portfolio grid item 
+													===============================
+													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
+													-->
+													<div class="portfolio-grid-item">
+														<a href="memories.html" class="pgi-image-wrap" data-cursor="겨울<br>파티">
+															<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+															<div class="pgi-image-holder">
+																<div class="pgi-image-inner anim-zoomin">
+																	<figure class="pgi-video-wrap ttgr-height">
+																		<video class="pgi-video" loop muted preload="metadata" poster="assets/img/main/christmas_beak.png">
+																			<source src="assets/vids/winter_beak.mp4" type="video/mp4">
+																		</video>
+																	</figure> <!-- /.pgi-video-wrap -->
+																</div> <!-- /.pgi-image-inner -->
+															</div> <!-- /.pgi-image-holder -->
+														</a> <!-- /.pgi-image-wrap -->
+
+														<div class="pgi-caption">
+															<div class="pgi-caption-inner">
+																<h2 class="pgi-title">
+																	<a href="memories.html">연말은 크리스마스지</a>
+																</h2>
+																<div class="pgi-categories-wrap">
+																	<div class="pgi-category">백곰탕의 크리스마스 일기</div>
+																	<!-- <div class="pgi-category">Varia</div> -->
+																</div> <!-- /.pli-categories-wrap -->
+															</div> <!-- /.pgi-caption-inner -->
+														</div> <!-- /.pgi-caption -->
+													</div>
+													<!-- End portfolio grid item -->
+
+												</div> <!-- /.ttgr-item-inner -->
+											</div>
+											<!-- End tt-Grid item -->
+
+											<!-- Begin tt-Grid item
+											======================== -->
+											<div class="tt-grid-item isotope-item nature">
+												<div class="ttgr-item-inner">
+
+													<!-- Begin portfolio grid item 
+													===============================
+													* Use class "pgi-image-is-light" if needed, it makes the caption visible better if you use light image (only effect if "pgi-cap-inside" is enabled on "portfolio-grid"!).
+													-->
+													<div class="portfolio-grid-item">
+														<a href="memories.html" class="pgi-image-wrap" data-cursor="천고<br>마비">
+															<!-- Use class "cover-opacity-*" to set image overlay if needed. For example "cover-opacity-2". Useful if class "pgi-cap-inside" is enabled on "portfolio-grid". Note: It is individual and depends on the image you use. More info about helper classes in file "helper.css". -->
+															<div class="pgi-image-holder">
+																<div class="pgi-image-inner anim-zoomin">
+																	<figure class="pgi-video-wrap ttgr-height">
+																		<video class="pgi-video" loop muted preload="metadata" poster="assets/img/main/fall_beak.png">
+																			<source src="assets/vids/fall_beak.mp4" type="video/mp4">
+																		</video>
+																	</figure> <!-- /.pgi-video-wrap -->
+																</div> <!-- /.pgi-image-inner -->
+															</div> <!-- /.pgi-image-holder -->
+														</a> <!-- /.pgi-image-wrap -->
+
+														<div class="pgi-caption">
+															<div class="pgi-caption-inner">
+																<h2 class="pgi-title">
+																	<a href="memories.html">푸르고 높은하늘을 가진 가을</a>
+																</h2>
+																<div class="pgi-categories-wrap">
+																	<div class="pgi-category">흩날리는 은행잎과 낙엽들</div>
+																	<!-- <div class="pgi-category">Varia</div> -->
+																</div> <!-- /.pli-categories-wrap -->
+															</div> <!-- /.pgi-caption-inner -->
+														</div> <!-- /.pgi-caption -->
+													</div>
+													<!-- End portfolio grid item -->
+
+												</div> <!-- /.ttgr-item-inner -->
+											</div>
+											<!-- End tt-Grid item -->
+										</div>
+										<!-- End tt-Grid items wrap  -->
+									</div>
+									<!-- End tt-Grid -->
+								</div>
+								<!-- End portfolio grid -->
+
+
+								<div class="text-center anim-fadeinup">
+
+									<!-- Begin scrolling button (See all works)
+									============================ -->
+									<a href="memories.html" class="tt-scrolling-btn all-works-btn" data-cursor="소중한<br>순간들">
+										<div class="scr-btn-inner ph-appear">
+											<div class="scr-btn-icon"><i class="fas fa-arrow-down"></i></div>
+											<div class="scr-btn-spinner">
+												<svg viewBox="0 0 500 500">
+													<defs>
+														<path d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250" id="textcircle"></path>
+													</defs>
+													<!-- If you change the text, you probably need to adjust the CSS so that it fits correctly. Find ".scr-btn-text" in file "theme.css" and adjust it for your needs. -->
+													<text dy="30" class="scr-btn-text">
+														<textPath xlink:href="#textcircle">- 이런 예쁜 우리의 사계절이 사라지고 있어 -</textPath>
+													</text>
+												</svg>
+											</div>
+										</div> <!-- /.sdc-inner -->
+									</a>
+									<!-- End scrolling button -->
+
+								</div> <!-- /.text-center -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-100 padding-bottom-xlg-150">
+							<div class="tt-section-inner tt-wrap max-width-1700">
+
+								<div class="tt-row margin-left-lg-3-p margin-right-lg-3-p">
+									<div class="tt-col-xl-4">
+										<div class="tt-heading tt-heading-xlg anim-fadeinup">
+											<h3 class="tt-heading-subtitle">살아남기 전에 <br>우리의 소중했던 순간들을 기억하며,</h3>
+											<h2 class="tt-heading-title">백곰탕의 <br>기후변화에서 <br>살아남기</h2>
+										</div>
+										<!-- End tt-Heading -->
+
+										<div class="max-width-600 margin-bottom-60 anim-fadeinup">
+											<h5>기후변화에도 살아남는 방법을 시나리오로 쉽게 아르켜 줄게.</h5>
+										</div>
+
+									</div> <!-- /.tt-col -->
+
+									<div class="tt-col-xl-1">
+									</div> <!-- /.tt-col -->
+
+									<div class="tt-col-xl-7">
+										<div class="tt-accordion tt-ac-borders">
+											<div class="tt-accordion-item anim-fadeinup">
+												<div class="tt-accordion-heading">
+													<div class="tt-ac-head cursor-alter">
+														<h3 class="tt-ac-head-title">곤충 시나리오</h3>
+													</div>
+
+													<div class="tt-accordion-caret-wrap">
+														<div class="tt-accordion-caret-inner magnetic-item">
+															<div class="tt-accordion-caret"></div>
+														</div>
+													</div> <!-- /.tt-accordion-caret-wrap -->
+												</div> <!-- /.tt-accordion-heading -->
+												<div class="tt-accordion-content max-width-800">
+													<p>기후 변화로 인하여 곤충들이 너무 많아졌어.특히 라임병, 말라리아에 발병률이 많아졌는데, 곤충이 많은 지역 이동 시 긴 소매 상의와 긴 바지를 꼭 착용해줘. 피부접촉을 최소화 해야해. DEET(진드기), 이카리딘, IR3535와 같은 모기 기피제를 피부와 옷에 사용하면 된다구. 산책 후에 반려동물 관리도 꼭 해줘. 반려동물의 몸에 진드기 붙어오는 경우가 많으니까. </p>
+												</div> <!-- /.tt-accordion-content -->
+											</div> <!-- /.tt-accordion-item -->
+
+											<div class="tt-accordion-item anim-fadeinup">
+												<div class="tt-accordion-heading">
+													<div class="tt-ac-head cursor-alter">
+														<h3 class="tt-ac-head-title">식량 시나리오</h3>
+														<!-- <div class="tt-accordion-subtext">Vivamus nisi</div> -->
+													</div>
+
+													<div class="tt-accordion-caret-wrap">
+														<div class="tt-accordion-caret-inner magnetic-item">
+															<div class="tt-accordion-caret"></div>
+														</div>
+													</div> <!-- /.tt-accordion-caret-wrap -->
+												</div> <!-- /.tt-accordion-heading -->
+												<div class="tt-accordion-content max-width-800">
+													<p>요즘 사과가 왜 이렇게 비싸지 싶지? 하지만 앞으로 과일 뿐만이 아니게된다구. 토양환경 변화로 식량 재배가 어려워졌어. 위 곤충 시나리오와 이어지는데 다양한 병해충 발생으로 인하여 작물 생산도 방해가 되고 있다구. 비상식량과 수분확보가 필수야. 생존가방을 미리 준비해. 내성 작물을 개발하고 정밀 농업 기술 도입, 관개 시스템 개선도 방법이야.</p>
+												</div> <!-- /.tt-accordion-content -->
+											</div> <!-- /.tt-accordion-item -->
+
+											<div class="tt-accordion-item anim-fadeinup">
+												<div class="tt-accordion-heading">
+													<div class="tt-ac-head cursor-alter">
+														<h3 class="tt-ac-head-title">홍수 시나리오</h3>
+														<!-- <div class="tt-accordion-subtext">Nam min proin eget</div> -->
+													</div>
+
+													<div class="tt-accordion-caret-wrap">
+														<div class="tt-accordion-caret-inner magnetic-item">
+															<div class="tt-accordion-caret"></div>
+														</div>
+													</div> <!-- /.tt-accordion-caret-wrap -->
+												</div> <!-- /.tt-accordion-heading -->
+												<div class="tt-accordion-content max-width-800">
+													<p>엘니뇨로 남아메리카에서 평년보다 많은 비가 내리게 되어 브라질에 폭우가 내려 홍수가 발생했어. 미국에서는 6월 2일(현지시각) 집중호우가 쏟아져 주도 휴스턴과 인근 카운티들이 침수되기도했어. 이는 한국도 피해갈 수 없어. 어서 물에 뜰 수 있는 백곰탕의 방수 배낭을 준비해. 비가 많이 오면 지하에 있으면 안되고, 차를 타고 이동 시에는 타이어 2/3까지 물이 차기 전 창문을 열고 이동해. 창문이 열리지 않을 경우 좌석 목받침으로 깨서 대피하렴.</p>
+												</div> <!-- /.tt-accordion-content -->
+											</div> <!-- /.tt-accordion-item -->
+
+											<div class="tt-accordion-item anim-fadeinup">
+												<div class="tt-accordion-heading">
+													<div class="tt-ac-head cursor-alter">
+														<h3 class="tt-ac-head-title">폭염 시나리오</h3>
+														<!-- <div class="tt-accordion-subtext">Condimentum sit amet</div> -->
+													</div>
+
+													<div class="tt-accordion-caret-wrap">
+														<div class="tt-accordion-caret-inner magnetic-item">
+															<div class="tt-accordion-caret"></div>
+														</div>
+													</div> <!-- /.tt-accordion-caret-wrap -->
+												</div> <!-- /.tt-accordion-heading -->
+												<div class="tt-accordion-content max-width-800">
+													<p>기후 변화로 평소보다도 많이 더워졌어. 가장 더운 시간대(낮 12시부터 오후 5시)에는 야외작업, 운동 등을 자제하고 시원한 곳에 머물러. 그리고 물을 자주 마시고, 양산도 준비해. </p>
+												</div> <!-- /.tt-accordion-content -->
+											</div> <!-- /.tt-accordion-item -->
+
+										</div>
+										<!-- End accordion -->
+
+									</div> <!-- /.tt-col -->
+								</div> <!-- /.tt-row -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-120 padding-bottom-xlg-120 bg-white-accent-3">
+							<div class="tt-section-inner">
+
+								<!-- Begin scrolling text
+								========================== 
+								Change data-scroll-speed="*" to adjust scrolling speed.
+								Use class "scr-text-reverse" to reverse scrolling direction. 
+								Use class "scr-text-stroke" to enable text stroke style (no effect on smaller screens!). 
+								-->
+								<div class="tt-scrolling-text" data-scroll-speed="10">
+									<div class="tt-scrolling-text-inner" data-text="우리에게 2년의 시간이 남았어 →">
+										우리에게 2년의 시간이 남았어 →
+									</div> <!-- /.tt-scrolling-text-inner -->
+								</div>
+								<!-- End scrolling text -->
+
+								<!-- Begin scrolling text
+								========================== 
+								Change data-scroll-speed="*" to adjust scrolling speed.
+								Use class "scr-text-reverse" to reverse scrolling direction. 
+								Use class "scr-text-stroke" to enable text stroke style (no effect on smaller screens!). 
+								-->
+								<div class="tt-scrolling-text scr-text-stroke scr-text-reverse" data-scroll-speed="10">
+									<div class="tt-scrolling-text-inner" data-text="그럼 앞으로 우리는 어떻게 살아가야 할까? →">
+										그럼 앞으로 우리는 어떻게 살아가야 할까? →
+									</div> <!-- /.tt-scrolling-text-inner -->
+								</div>
+								<!-- End scrolling text -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						실천하는 방법 알리기
+						-->
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+							<div class="tt-section-inner tt-wrap">
+								<div class="tt-heading tt-heading-lg tt-heading-center margin-bottom-120 anim-fadeinup">
+									<!-- <h3 class="tt-heading-subtitle text-main">Subtitle</h3> -->
+									<h2 class="tt-heading-title">소중한 순간이 영원하도록<br>내가 당장 할 수 있는 일</h2> 
+								</div>
+
+								<ul class="tt-logo-wall anim-fadeinup cl-col-3">
+									<li class="main-block">
+										<img src="assets/img/main/temperature_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/temperature.png" class="lv-client-dark" alt="Client">
+										<p>실내 온도를 1도 씩만 <br> 높이고 낮추기</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/wall-clock_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/wall-clock.png" class="lv-client-dark" alt="Client">
+										<p>샤워 시간을 1분 <br> 이라도 줄이기</p>
+									</li>
+									<li class="main-block"> 
+										<img src="assets/img/main/charger_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/charger_black.png" class="lv-client-dark" alt="Client">
+										<p>사용하지 않는 <br>콘센트는 빼놓기</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/high_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/high.png" class="lv-client-dark" alt="Client">
+										<p>소비 효율이 높은<br> 에너지 제품 선택</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/planet-earth_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/planet-earth.png" class="lv-client-dark" alt="Client">
+										<p>물건을 사야한다면<br>친환경 제품 사용하기</p>
+									</li>
+									<li class="main-block">
+										<img src="assets/img/main/seoul-metro-logo_white.png" class="lv-client-light" alt="Client">
+										<img src="assets/img/main/seoul-metro-logo.png" class="lv-client-dark" alt="Client">
+										<p>어딘가를 가야한다면<br>대중교통 이용하기</p>
+									</li>
+								</ul>
+								<!-- End logo wall -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+						
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-120 padding-bottom-xlg-120 bg-white-accent-3">
+							<div class="tt-section-inner">
+
+								<!-- Begin scrolling text
+								========================== 
+								Change data-scroll-speed="*" to adjust scrolling speed.
+								Use class "scr-text-reverse" to reverse scrolling direction. 
+								Use class "scr-text-stroke" to enable text stroke style (no effect on smaller screens!). 
+								-->
+								<div class="tt-scrolling-text" data-scroll-speed="10">
+									<div class="tt-scrolling-text-inner" data-text="우리는 시간을 더 늘릴 수 있어 →">
+										우리는 시간을 더 늘릴 수 있어 →
+									</div> <!-- /.tt-scrolling-text-inner -->
+								</div>
+								<!-- End scrolling text -->
+
+								<!-- Begin scrolling text
+								========================== 
+								Change data-scroll-speed="*" to adjust scrolling speed.
+								Use class "scr-text-reverse" to reverse scrolling direction. 
+								Use class "scr-text-stroke" to enable text stroke style (no effect on smaller screens!). 
+								-->
+								<div class="tt-scrolling-text scr-text-stroke scr-text-reverse" data-scroll-speed="10">
+									<div class="tt-scrolling-text-inner" data-text="하지만 늘리지 못한다면 재난 상황에 대비해야해 →">
+										하지만 늘리지 못한다면 재난 상황에 대비해야해 →
+									</div> <!-- /.tt-scrolling-text-inner -->
+								</div>
+								<!-- End scrolling text -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150 bg-white-accent-3">
+							<div class="tt-section-inner tt-wrap max-width-1600">
+								<div class="tt-heading tt-heading-xlg margin-bottom-7-p anim-fadeinup max-width-1250 margin-auto">
+									<h3 class="tt-heading-subtitle">어떤 재난이 일어나도 든든한</h3>
+									<h2 class="tt-heading-title">기후변화를 이겨낼 생존 아이템</h2> <!-- You can use <br> to break a text line if needed -->
+									<a href="survival_item.html" class="tt-btn tt-btn-link">
+										<div data-hover="백곰탕의 생존가방">생존가방 보러가기</div>
+										<span class="tt-btn-icon"><i class="fas fa-arrow-right"></i></span>
+									</a>
+								</div>
+								<!-- End tt-Heading -->
+								<div class="tt-blog-carousel anim-fadeinup" data-speed="800" data-simulate-touch="true" data-pagination-type="bullets">
+									<!-- Begin swiper container -->
+									<div class="swiper">
+										<!-- Begin swiper wrapper (required) -->
+										<div class="swiper-wrapper">
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<!-- Begin blog carousel item 
+												============================== -->
+												<div class="tt-blog-carousel-item">
+													<a href="survival_item.html" class="tt-bci-image-wrap" data-cursor="생존가방<br>바로가기">
+														<figure class="tt-bci-image">
+															<img class="swiper-lazy" src="assets/img/main/emergency_bag.png" data-src="assets/img/main/emergency_bag.png" alt="Image">
+														</figure> <!-- /.tt-bci-image -->
+													</a> <!-- /.tt-bci-image-wrap -->
+													<div class="tt-bci-info">
+														<div class="tt-bci-categories">
+															<a href="floods.html">홍수 시나리오</a>
+															<!-- <a href="blog-archive.html">Uncategorized</a> -->
+														</div>
+														<h2 class="tt-bci-title"><a href="survival_item.html">방수배낭</a></h2>
+														<div class="tt-bci-meta"> 
+															<span class="posted-by"> <a href="floods.html" title="시나리오 보러가기">수영을 못해도 괜찮아. 물에 뜰꺼야.</a></span>
+														</div> <!-- /.tt-bci-meta -->
+													</div> <!-- /.tt-bci-inf -->
+												</div>
+												<!-- End blog carousel item -->
+
+											</div>
+											<!-- End swiper slide -->
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<!-- Begin blog carousel item 
+												============================== -->
+												<div class="tt-blog-carousel-item">
+													<a href="survival_item.html" class="tt-bci-image-wrap" data-cursor="생존가방<br>바로가기">
+														<figure class="tt-bci-image">
+															<img class="swiper-lazy" src="assets/img/main/emergency_bugs.png" data-src="assets/img/main/emergency_bugs.png" alt="Image">
+														</figure> <!-- /.tt-bci-image -->
+													</a> <!-- /.tt-bci-image-wrap -->
+
+													<div class="tt-bci-info">
+														<div class="tt-bci-categories">
+															<a href="bugs.html">곤충 시나리오</a>
+															<!-- <a href="blog-archive.html">Uncategorized</a> -->
+														</div>
+														<h2 class="tt-bci-title"><a href="survival_item.html">곤충스프레이</a></h2>
+														<div class="tt-bci-meta"> 
+															<span class="posted-by"> <a href="bugs.html" title="곤충시나리오 보기">늘어난 진드기와 모기에 필수.</a></span>
+														</div> <!-- /.tt-bci-meta -->
+													</div> <!-- /.tt-bci-inf -->
+												</div>
+												<!-- End blog carousel item -->
+
+											</div>
+											<!-- End swiper slide -->
+
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+
+												<!-- Begin blog carousel item 
+												============================== -->
+												<div class="tt-blog-carousel-item">
+													<a href="survival_item.html" class="tt-bci-image-wrap" data-cursor="생존가방<br>바로가기">
+														<figure class="tt-bci-image">
+															<img class="swiper-lazy" src="assets/img/main/emergency_foods.png" data-src="assets/img/main/emergency_foods.png" alt="Image">
+														</figure> <!-- /.tt-bci-image -->
+													</a> <!-- /.tt-bci-image-wrap -->
+
+													<div class="tt-bci-info">
+														<div class="tt-bci-categories">
+															<a href="foods.html">식량 시나리오</a>
+															<!-- <a href="blog-archive.html">Uncategorized</a> -->
+														</div>
+														<h2 class="tt-bci-title"><a href="survival_item.html">생존식량</a></h2>
+														<div class="tt-bci-meta"> 
+															<span class="posted-by"><a href="foods.html" title="식량난 시나리오">먹을게 없으면 바로 아사.</a></span>
+														</div> <!-- /.tt-bci-meta -->
+													</div> <!-- /.tt-bci-inf -->
+												</div>
+												<!-- End blog carousel item -->
+
+											</div>
+											<!-- End swiper slide -->
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<!-- Begin blog carousel item 
+												============================== -->
+												<div class="tt-blog-carousel-item">
+													<a href="survival_item.html" class="tt-bci-image-wrap" data-cursor="생존가방<br>바로가기">
+														<figure class="tt-bci-image">
+															<img class="swiper-lazy" src="assets/img/main/emergency_heat.png" data-src="assets/img/main/emergency_heat.png" alt="Image">
+														</figure> <!-- /.tt-bci-image -->
+													</a> <!-- /.tt-bci-image-wrap -->
+													<div class="tt-bci-info">
+														<div class="tt-bci-categories">
+															<a href="heatwave.html">폭염 시나리오</a>
+															<!-- <a href="blog-archive.html">Uncategorized</a> -->
+														</div>
+														<h2 class="tt-bci-title"><a href="survival_item.html">폭염응급키트</a></h2>
+														<div class="tt-bci-meta"> 
+															<span class="posted-by"><a href="heatwave.html" title="View all posts by John Doe">더위 먹었을 때 꼭 필요해.</a></span>
+														</div> <!-- /.tt-bci-meta -->
+													</div> <!-- /.tt-bci-inf -->
+												</div>
+												<!-- End blog carousel item -->
+											</div>
+											<!-- End swiper slide -->
+											<!-- Begin swiper slide 
+											======================== -->
+											<div class="swiper-slide">
+												<!-- Begin blog carousel item 
+												============================== -->
+												<div class="tt-blog-carousel-item">
+													<a href="survival_item.html" class="tt-bci-image-wrap" data-cursor="생존가방<br>바로가기">
+														<figure class="tt-bci-image">
+															<img class="swiper-lazy" src="assets/img/main/emergency_water.png" data-src="assets/img/main/emergency_water.png" alt="Image">
+														</figure> <!-- /.tt-bci-image -->
+													</a> <!-- /.tt-bci-image-wrap -->
+													<div class="tt-bci-info">
+														<div class="tt-bci-categories">
+															<a href="survival_item.html">전체</a>
+															<!-- <a href="blog-archive.html">Uncategorized</a> -->
+														</div>
+														<h2 class="tt-bci-title"><a href="survival_item.html">정수캡슐</a></h2>
+														<div class="tt-bci-meta"> 
+															<span class="posted-by"><a href="survival_item.html" title="재난상황에 다 필요한 아이템">어떤 재난상황에도 물은 마셔야 하니까.</a></span>
+														</div> <!-- /.tt-bci-meta -->
+													</div> <!-- /.tt-bci-inf -->
+												</div>
+												<!-- End blog carousel item -->
+											</div>
+											<!-- End swiper slide -->
+										</div>
+										<!-- End swiper wrapper -->
+									</div>
+									<!-- End swiper container -->
+									<!-- Begin blog carousel navigation (arrows) 
+									============================================= -->
+									<div class="tt-blc-nav-prev">
+										<div class="tt-blc-nav-arrow magnetic-item"><i class="tt-arrow-left"></i></div>
+									</div>
+									<div class="tt-blc-nav-next">
+										<div class="tt-blc-nav-arrow magnetic-item"><i class="tt-arrow-right"></i></div>
+									</div>
+									<!-- End blog carousel navigation -->
+
+									<!-- Blog carousel pagination -->
+									<div class="tt-blc-pagination hide-cursor"></div>
+
+								</div>
+								<!-- End blog carousel -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+						<!-- =======================
+						///// Begin tt-section /////
+						============================ 
+						* You can use padding classes if needed. For example "padding-top-xlg-150", "padding-bottom-xlg-150", "no-padding-top", "no-padding-bottom", etc. Note that each situation may be different and each section may need different classes according to your needs. More info about helper classes can be found in the file "helper.css".
+						-->
+						<div class="tt-section padding-top-xlg-150">
+							<div class="tt-section-inner tt-wrap max-width-700">
+
+								<!-- Begin tt-Heading 
+								====================== 
+								* Use class "tt-heading-xsm", "tt-heading-sm", "tt-heading-lg", "tt-heading-xlg" or "tt-heading-xxlg" to set caption size (no class = default size).
+								* Use class "tt-heading-stroke" to enable stroke style.
+								* Use class "tt-heading-center" to align tt-Heading to center.
+								* Use prepared helper class "max-width-*" to add custom width if needed. Example: "max-width-800". More info about helper classes can be found in the file "helper.css".
+								-->
+								<div class="tt-heading tt-heading-xxlg margin-bottom-8-p anim-fadeinup">
+									<h3 class="tt-heading-subtitle">이런 최악의 상황이 오지 않도록. <br>지금부터 환경보호에 동참해주세요.</h3>
+									<h2 class="tt-heading-title">Let's Save <br> the Earth Together!</h2> <!-- You can use <br> to break a text line if needed -->
+								</div>
+								<!-- End tt-Heading -->
+
+							
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+						<!-- End tt-section -->
+
+						<div class="tt-section padding-top-xlg-150 padding-bottom-xlg-150">
+							<div class="tt-section-inner tt-wrap">
+								<div class="tt-page-nav tt-pn-center">
+									<a href="landing-page.html" class="tt-pn-link anim-fadeinup not-hide-cursor">
+										<div id="timer"></div>
+									</a> <!-- /.tt-pn-link -->
+									<div class="tt-pn-subtitle anim-fadeinup">우리가 지구를 위해 노력한 시간. 남은 시간 종료 후에도 흘러가기를.</div>
+								</div>
+								<!-- End page nav -->
+
+							</div> <!-- /.tt-section-inner -->
+						</div>
+
+					</div>
+					<!-- End page content -->
+					
+
+					<!-- ======================
+					///// Begin tt-footer /////
+					=========================== -->
+					<footer id="tt-footer">
+						<div class="tt-footer-inner">
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center-left">
+								<div class="footer-col-inner">
+
+									<a href="#" class="tt-btn tt-btn-link scroll-to-top">
+										<span class="tt-btn-icon"><i class="fas fa-arrow-up"></i></span>
+										<div data-hover="Back to Top">Back to Top</div>
+									</a>
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center order-m-last">
+								<div class="footer-col-inner">
+
+									<div class="tt-copyright text-gray">
+										<a href="#" target="_blank" rel="noopener" class="tt-btn tt-btn-link">
+											<span class="tt-btn-icon"><i class="far fa-copyright"></i></span>
+											<div data-hover="HyeseungKim">Made by Hyeseung Kim</div>
+										</a>
+									</div>
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+							<!-- Begin footer column 
+							========================= -->
+							<div class="footer-col tt-align-center-right">
+								<div class="footer-col-inner">
+									<div class="footer-social">
+										<div class="footer-social-text"><span>Follow</span><i class="fas fa-share-alt"></i></div>
+										<div class="social-buttons">
+											<ul>
+												<li><a href="#" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+												<li><a href="#" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+												<li><a href="#" class="magnetic-item" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+											</ul>
+										</div> <!-- /.social-buttons -->
+									</div> <!-- /.footer-social -->
+
+								</div> <!-- /.footer-col-inner -->
+							</div>
+							<!-- Begin footer column -->
+
+						</div> <!-- /.tt-section-inner -->
+					</footer>
+					<!-- End tt-footer -->
+
+
+				</div>
+				<!-- End content wrap -->
+
+			</div>
+			<!-- End scroll container -->
+
+		</main>
+		<!-- End body inner -->
+
+		<!-- ====================
+		///// Scripts below /////
+		===================== -->
+
+		<!-- Core JS -->
+		<script src="assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+
+		<!-- Libs and Plugins JS -->
+		<script src="assets/vendor/gsap/gsap.min.js"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->
+		<script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script> <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
+		<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script> <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
+
+		<script src="assets/vendor/smooth-scrollbar.js"></script> <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
+		<script src="assets/vendor/swiper/js/swiper-bundle.min.js"></script> <!-- Swiper JS (https://swiperjs.com/) -->
+		<script src="assets/vendor/isotope/imagesloaded.pkgd.min.js"></script> <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
+		<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
+		<script src="assets/vendor/isotope/packery-mode.pkgd.min.js"></script> <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
+		<script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
+		<script src="assets/vendor/jquery.mousewheel.min.js"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
+
+		<!-- Template master JS -->
+		<script src="assets/js/theme.js"></script>
+
+
+
+	</body>
+
+</html>
